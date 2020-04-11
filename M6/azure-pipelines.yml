@@ -33,7 +33,7 @@ stages:
     - task: VSBuild@1
       displayName: 'build solution'
       inputs:
-        solution: ./ECommerce.sln
+        solution: M6/ECommerce.sln
         platform: x64
         configuration: release
 
