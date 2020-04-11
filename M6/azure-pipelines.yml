@@ -28,19 +28,19 @@ stages:
     - task: NuGetCommand@2
       displayName: 'NuGet restore'
       inputs:
-        restoreSolution: ./ECommerce.sln
+        restoreSolution: ../ECommerce.sln
 
     - task: VSBuild@1
       displayName: 'build solution'
       inputs:
-        solution: M6/ECommerce.sln
+        solution: ../ECommerce.sln
         platform: x64
         configuration: release
 
     - task: VSBuild@1
       displayName: 'build fabric project'
       inputs:
-        solution: M6/ECommerce/ECommerce.sfproj
+        solution: ../ECommerce/ECommerce.sfproj
         msbuildArgs: '/t:Package /p:PackageLocation=$(build.artifactstagingdirectory)\pkg'
         platform: x64
         configuration: release
